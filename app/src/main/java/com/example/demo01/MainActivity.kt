@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         //pregunta2()
         //pregunta3()
         //pregunta4()
-        //trabajoEnClase1()
-        //trabajoEnClase2()
+        trabajoEnClase1()
+        trabajoEnClase2()
 
     }
     private fun pregunta1(){
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun tabajoEnClase2(){
+    private fun trabajoEnClase2(){
         /* Validacion de cedula*/
         //var cedula = arrayOf(1,1,0,5,8,8,6,1,2,8)
         //var cedula = arrayOf(1,1,0,6,0,0,0,1,8,3)
