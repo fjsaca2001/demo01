@@ -10,7 +10,10 @@ class MainActivity : AppCompatActivity() {
         //pregunta1()
         //pregunta2()
         //pregunta3()
-        pregunta4()
+        //pregunta4()
+        //trabajoEnClase1()
+        //trabajoEnClase2()
+
     }
     private fun pregunta1(){
         // Validar si una persona es mayor o menor de edad
@@ -86,6 +89,60 @@ class MainActivity : AppCompatActivity() {
         println(vehiculo1.marca)
         vehiculo1.vehiculo()
 
+    }
+
+    private fun trabajoEnClase1(){
+        // Ordenar un arreglo
+        var array = arrayOf(5,8,7,9,1,0,5,7,9)
+        var aux=0
+        // Metodo Burbuja
+        for(i in (0 until array.size-1)){
+            for(j in (0 until array.size-1)){
+                if(array[j]>array[j+1]){
+                    aux=array[j]
+                    array[j]=array[j+1]
+                    array[j+1]=aux
+                }
+            }
+        }
+        //Impresion del arreglo
+        for (x in array){
+            println(x)
+        }
+    }
+
+    private fun tabajoEnClase2(){
+        /* Validacion de cedula*/
+        //var cedula = arrayOf(1,1,0,5,8,8,6,1,2,8)
+        //var cedula = arrayOf(1,1,0,6,0,0,0,1,8,3)
+        var cedula = arrayOf(1,1,5,0,0,3,0,6,3,1)
+        var validadores = arrayOf(2,1,2,1,2,1,2,1,2)
+        var contador = 0
+        var suma = 0
+        //recorrido de cada numero de la cedula
+        for (x in validadores){
+            // Multiplicacion del validador por el numero
+            var res = x * cedula[contador]
+            contador += 1
+            // Condicion si la multiplicacion supera el 9
+            if (res > 9){
+                // paso del numero a String
+                var aux1 = res.toString()
+                // Suma de los dos valores
+                res = Character.getNumericValue(aux1.get(0)) + Character.getNumericValue(aux1.get(1))
+            }
+            // Suma total
+            suma += res
+        }
+        /*
+            Condicion para validar el ultimo numero Si el residuo es 0 se validara,
+            Ó si es diferente se tendra que a 10 restarle el residuo
+         */
+        if (cedula[9] == (suma % 10) || cedula[9] == 10 - (suma % 10)){
+            println("Cedula Correcta")
+        }else{
+            println("Cedula Incorrecta")
+        }
     }
 
 }
